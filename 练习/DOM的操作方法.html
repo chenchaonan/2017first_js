@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            width:500px;
+            height:35px;
+            line-height: 35px;
+            color: #fff;
+            text-align: center;
+            background: darkcyan;
+            margin: 3px 0;
+        }
+        p{
+            width:500px;
+            height:35px;
+            background: red;
+            text-align: center;
+            color: #fff;
+        }
+        #box{
+            border:1px solid red;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul id="box">
+        <li>1</li>
+        <li id="two" style="font-size: 24px;color:red">2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    var oDiv=document.getElementsByTagName('div')[0];
+    var box=document.getElementById('box');
+
+
+    //insertBefore()给元素内容中某一个元素之前添加新元素
+    //父元素.insertBefore(新的dom对象，特定的子元素)
+//    var two=document.getElementById('two');
+//    var newItem=document.createElement('li');
+//    box.insertBefore(newItem,two)
+//
+//
+//    var newp=document.createElement('p');
+//    newp.innerText='新插入的p标签';
+//    oDiv.insertBefore(newp,box)
+
+
+    //动态复制元素  对象.cloneNode()
+//    var deep=box.cloneNode(true);  //深度克隆，本身和子节点
+//    console.log(deep);
+//    document.body.appendChild(deep);
+//
+//    var ligt=box.cloneNode(false);  //浅克隆，只复制元素本身
+//    console.log(ligt);
+//    document.body.appendChild(ligt);
+
+
+    //控制dom对象，获取行内属性值  getAttribute();
+    var oLis=two.getAttribute('style');
+    console.log(oLis);
+
+    var _oLis=two.setAttribute('li','biaoti');
+
+
+
+</script>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //    var ary = [10, 9, 7, 8, 5];
+    //    function quikSort(ary) {
+    //        if (ary.length <= 1) {
+    //            return ary
+    //        }
+    //        var centerIndex = Math.floor(ary.length / 2);
+    //        var centerItem = ary.splice(centerIndex, 1);
+    //        var left = [];
+    //        var right = [];
+    //        for (var i = 0; i < ary.length; i++) {
+    //            if (ary[i] < centerItem) {
+    //                left.push(ary[i]);
+    //            } else {
+    //                right.push(ary[i])
+    //            }
+    //        }
+    //        return quikSort(left).concat(centerItem, quikSort(right))
+    //    }
+    //    var res=quikSort(ary);
+    //    console.log(res);
+
+
+    //冒泡排序的思想：每一轮比较出来一个最大的，排在最后边，一个数组有m个数就的对比m-1轮
+    //每一轮都要从第一个数往后两两比较，每一轮比较的次数就是m-i-1次
+    //然后判断当前项和后一项比较，若是后一项小，则两者进行交换
+    var ary = [3, 2, 5, 6, 11, 8];
+    //    for (var i = 0; i < ary.length - 1; i++) {
+    //        for (var k = 0; k < ary.length - i - 1; k++) {
+    //            if (ary[k] > ary[k + 1]) {
+    //                var num=ary[k];
+    //                ary[k]=ary[k+1];
+    //                ary[k+1]=num;
+    //            }
+    //        }
+    //    }
+    //    console.log(ary);
+
+
+
+    //快速排序
+    //定义函数记得传形参
+    //快速排序其实就是分组排序，找出中间项，直至将数组拆分成一项，停止拆分，所以需要一个临界值的判断
+    //需要if判断，当前项和中间项的值比较大小，小的放左边，大的放右边，最后利用数组的拼合concat将数组的每一项拼合起来
+//    function quickSort(ary) {
+//        if(ary.length<=1){
+//            return ary
+//        }
+//        var centerIndex = Math.floor(ary.length / 2);
+//        var centerItem = ary.splice(centerIndex, 1);
+//        var left = [];
+//        var right = [];
+//        for (var i = 0; i < ary.length; i++) {
+//            if (ary[i] < centerItem) {
+//                left.push(ary[i])
+//            }else {
+//                right.push(ary[i])
+//            }
+//        }
+//        return quickSort(left).concat(centerItem,quickSort(right))
+//    }
+//    var res=quickSort(ary);
+//    console.log(res);
+
+
+
+    //插入排序
+    //插入排序思想拿原数组的数与新定义的数组里的数对比，对比时候从后往前对比；
+    function insertSort(ary) {
+        var newAry=[];
+        newAry.push(ary[0]);
+        for(var i=1;i<ary.length;i++){
+            for(var j=newAry.length-1;j>=0;){
+                if(ary[i]<newAry[j]){
+                    j--;
+                    if(j<0){
+                        newAry.unshift(ary[i])
+                    }
+                }else {
+                    newAry.splice(j+1,0,ary[i]);
+                    j=-1;
+                }
+            }
+        }
+        return newAry
+    }
+    console.log(insertSort(ary));
+
+
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>综合复习</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+</body>
+</html>
+<script>
+    //任意数求和
+
+    function sum() {
+        var str = 0;
+        for (var i = 0; i < arguments.length; i++) {
+            str += arguments[i];
+        }
+        return str
+    }
+    console.log(sum(1, 2, 3, 4, 5));
+
+
+    //数组去重
+    var ary = [11, 22, 33, 44, 11, 22, 33]
+    var obj = {};
+    for (var i = 0; i < ary.length; i++) {
+        item = ary[i];
+        obj[item] = item;
+    }
+    var ary = [];
+    for (var k in obj) {
+        ary.push(k);
+    }
+    console.log(ary);
+
+
+</script>

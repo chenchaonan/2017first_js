@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //    var ary = [3, 2, 1];
+    //    ary.sort(function (a, b) {
+    //        return a - b;
+    //    })
+    //    console.log(ary);
+
+    //轮和次
+    //相邻两个数进行比较，大的一个往后放，定义一个变量，用来交换位置。
+    //第一次比较的时候，得到最大的一个数放到最后边，再次循环比较得到第二个最大的数，依次循环，有n个数就得循环n-1次。
+
+    //    var ary = [11, 20, 30, 9, 8, 25];
+    //    for (var i = 0; i < ary.length - 1; i++) {
+    //        for (var k = 0; k < ary.length - 1 - i; k++) {
+    //            if (ary[k] > ary[k + 1]) {
+    //                var num = ary[k];
+    //                ary[k] = ary[k + 1];
+    //                ary[k + 1] = num;
+    //            }
+    //
+    //        }
+    //    }
+    //    console.log(ary);
+    //
+    //    function sum(num) {
+    //        if (num == 0) {
+    //            return 0;
+    //        }
+    //        return num + sum(num - 1);
+    //    }
+    //    console.log(sum(100));
+
+    //100以内能被3和5整除的数求和
+    function sum(num) {
+        if (num == 0) {
+            return 0
+        } else if (num % 2 == 0 && num % 5 == 0) {
+            return num+sum(num-1);
+        }else {
+            return sum(num-1)
+        }
+    }
+    console.log(sum(100));
+
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求和</title>
+
+</head>
+<body>
+<div id="box">
+
+</div>
+</body>
+</html>
+<script>
+
+
+    //用户可以根据自己的需求，传递一个或者多个参数给函数，获取到所有传进来的值，能被3整除也能被5整除的相加
+    function sum() {
+        var res = 0;
+        for (var i = 0; i < arguments.length; i++) {
+            if (arguments[i] % 3 == 0 && arguments[i] % 5 == 0) {
+                res += arguments[i];
+            }
+        }
+        return res
+    }
+    console.log(sum(15,30,45,60));
+
+    //3+5+6+9+10
+
+</script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 500px;
+        }
+
+        span {
+            display: inline-block;
+            width: 80px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            color: #fff;
+            background: darkcyan;
+            cursor: pointer;
+        }
+
+        p {
+            width: 500px;
+            height: 300px;
+            background: darkcyan;
+            color: #fff;
+            line-height: 300px;
+            text-align: center;
+            display: none;
+        }
+
+        .active {
+            display: inline-block;
+            background: sandybrown;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <span class="active">按钮1</span>
+    <span>按钮2</span>
+    <span>按钮3</span>
+    <p class="active">tab1</p>
+    <p>tab2</p>
+    <p>tab3</p>
+</div>
+</body>
+</html>
+<script>
+    var btns = document.getElementsByTagName('span');
+    var ps = document.getElementsByTagName('p');
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].index = i;
+        btns[i].onclick = function () {
+            for (var k = 0; k < btns.length; k++) {
+                btns[k].className = '';
+                ps[k].className = '';
+            }
+            this.className='active';
+            ps[this.index].className='active';
+        }
+    }
+</script>

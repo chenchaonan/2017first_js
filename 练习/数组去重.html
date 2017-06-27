@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //利用对象键值对的形式做比较
+    var ary=[11,22,33,11,22,33];
+    var obj={};
+    for(var i=0;i<ary.length;i++){
+        item=ary[i];
+        obj[item]=item;
+    }
+    ary=[];
+    for(var k in obj){
+        ary.push(k)
+    }
+    console.log(ary);
+
+</script>

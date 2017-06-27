@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    var ary = [9, 8, 7, 6, 1, 2, 3, 4, 5, 7];
+    function insertSort(ary) {
+        var newAry = [];
+        newAry.push(ary[0]);
+        for (var i = 1; i < ary.length; i++) {
+            for (var j = newAry.length - 1; j >= 0;) {
+                if (ary[i] < newAry[j]) {
+                    j--;
+                    if (j < 0) {
+                        newAry.unshift(ary[i])
+                    }
+                } else {
+                    newAry.splice(j + 1, 0, ary[i]);
+                    j = - 1;//j=-1 结束当前循环
+                }
+            }
+        }
+        return newAry
+    }
+    console.log(insertSort(ary));
+</script>
